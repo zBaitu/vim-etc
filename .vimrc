@@ -19,6 +19,17 @@ silent! source $HOME/.vim/%:e.vim
 " settings
 "----------------------------------------
 syntax on
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
+"colorscheme jellybeans
+colorscheme solarized
+"colorscheme SolarizedDark
+
+"do not clear vim screen when quit
+:set t_ti= t_te= 
+
+
 
 set autoindent
 set backspace=indent,eol,start

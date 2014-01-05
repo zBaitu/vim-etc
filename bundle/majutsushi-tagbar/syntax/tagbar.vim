@@ -45,7 +45,7 @@ syntax match TagbarSignature  '(.*)'
 syntax match TagbarPseudoID   '\*\ze :'
 
 highlight default link TagbarComment    Comment
-highlight default link TagbarKind       Identifier
+highlight default link TagbarKind       Type
 highlight default link TagbarNestedKind TagbarKind
 highlight default link TagbarScope      Title
 highlight default link TagbarType       Type

@@ -2988,7 +2988,7 @@ if version >= 508 || !exists("did_php_syn_inits")
   HiLink phpQuoteBacktick phpOperator
 
   " built-in langauge functions / classes
-  HiLink phpFunctions       Function        " => Identifier (Cyan) / Function (White)
+"  HiLink phpFunctions       Function        " => Identifier (Cyan) / Function (White)
   HiLink phpClasses         phpFunctions
   HiLink phpMethods         phpFunctions
   HiLink phpInterfaces      phpCoreConstant
