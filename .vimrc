@@ -1,42 +1,34 @@
-"----------------------------------------
+"---------------------------------------
 " pathogen
-"----------------------------------------
+"---------------------------------------
 call pathogen#infect()
 filetype plugin indent on
 
 
 
 
-"----------------------------------------
+"---------------------------------------
 " sessions
-"----------------------------------------
+"---------------------------------------
 silent! source $HOME/.vim/%:e.vim
 
 
 
 
-"----------------------------------------
+"---------------------------------------
 " settings
-"----------------------------------------
+"---------------------------------------
 syntax on
-set t_Co=256
-let g:solarized_termcolors=256
+
 set background=dark
-"colorscheme jellybeans
-colorscheme solarized
-"colorscheme SolarizedDark
-
-"do not clear vim screen when quit
-:set t_ti= t_te= 
-
-
-
 set autoindent
 set backspace=indent,eol,start
 set csto=1
 set encoding=utf-8
 "set expandtab
 set fileencodings=utf-8,gbk
+set foldmethod=marker
+set foldlevel=0
 set hlsearch
 set nocompatible
 set nocsverb
@@ -45,6 +37,10 @@ set ruler
 "set shiftwidth=4
 set showtabline=0
 "set softtabstop=4
+set t_Co=256
+"do not clear vim screen when quit
+set t_te=
+set t_ti=
 "set tabstop=4
 set tags=tags;
 set textwidth=120
@@ -53,9 +49,9 @@ set wrap
 
 
 
-"----------------------------------------
+"---------------------------------------
 " syntax
-"----------------------------------------
+"---------------------------------------
 let g:c_syntax_for_h = 1
 
 
@@ -68,6 +64,7 @@ let g:c_syntax_for_h = 1
 " autocmd FileType html setlocal shiftwidth=2 tabstop=2
 " autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 " autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType vim setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 
 
@@ -109,7 +106,6 @@ function! LoadCscope()
     endif
 endfunction
 
-
 " license
 function InsertLicense()
     let filename = expand('%:t')
@@ -123,7 +119,7 @@ endfunction
 
 
 "----------------------------------------
-" auto commands 
+" auto commands
 "----------------------------------------
 
 " Remember the last position of the cursor.
@@ -135,14 +131,16 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 au BufEnter /* call LoadCscope()
 
 " tagbar
-autocmd Filetype mmix,cweb,scheme,asm,h,c,hpp,cpp,cc,CC,zsh,sh,python,ruby,php,make,vim,lex,text,cmake :TagbarToggle
+if ! &diff
+    autocmd Filetype mmix,cweb,scheme,asm,h,c,hpp,cpp,cc,CC,zsh,sh,python,ruby,php,make,vim,lex,text,cmake :TagbarToggle
+else
+endif
 
 
 
 "----------------------------------------
-" map 
+" map
 "----------------------------------------
-
 " F2 save file
 map <F2> :w<cr>
 imap <F2> <esc>:w<cr>
@@ -161,7 +159,7 @@ imap <F4> <esc>:qa<cr>
 cmap <F4> <esc>:qa<cr>
 
 
-" F5 tagbar 
+" F5 tagbar
 map <F5> :TagbarToggle<cr>
 imap <F5> <esc>:TagbarToggle<cr>i
 cmap <F5> <esc>:TagbarToggle<cr>
@@ -211,7 +209,7 @@ nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
 
 
 "----------------------------------------
-" tagbar 
+" tagbar
 "----------------------------------------
 let tagbar_left=1
 let tagbar_width=34
@@ -222,7 +220,7 @@ let tagbar_compact=1
 
 
 "----------------------------------------
-" nerdtree 
+" nerdtree
 "----------------------------------------
 let NERDTreeShowHidden=1
 let NERDTreeWinPos="right"
@@ -233,22 +231,7 @@ let NERDTreeMinimalUI=1
 
 
 "----------------------------------------
-" clang_complete 
+" solarized
 "----------------------------------------
-let g:clang_auto_select=1 
-let g:clang_hl_errors=1
-let g:clang_close_preview=1
-let g:clang_periodic_quickfix=1
-let g:clang_snippets=1
-let g:clang_snippets_engine='clang_complete'
-let g:clang_use_library=1
-let g:clang_library_path='/usr/local/lib'
-let g:clang_user_options='-stdlib=libc++ -std=c++11'
-let g:clang_complete_macros=1 
-
-let g:clic_filename="./index.db"
-
-nnoremap <Leader>q :call g:ClangUpdateQuickFix()<CR>
-nnoremap <Leader>r :call ClangGetReferences()<CR>
-nnoremap <Leader>d :call ClangGetDeclarations()<CR>
-nnoremap <Leader>s :call ClangGetSubclasses()<CR>
+let g:solarized_termcolors=256
+colorscheme solarized

@@ -6,7 +6,7 @@
 " Created:  In the middle of the night
 " Modified: 2011 Apr 14
 "
-" Usage "{{{
+" Usage {{{
 "
 " ---------------------------------------------------------------------
 " ABOUT:
@@ -244,7 +244,6 @@
 " http://vimcasts.org/episodes/creating-colorschemes-for-vim/
 " http://www.frexx.de/xterm-256-notes/"
 "
-"
 " }}}
 " Default option values"{{{
 " ---------------------------------------------------------------------
@@ -361,14 +360,14 @@ elseif g:solarized_termcolors == 256
     let s:base1       = "245"
     let s:base2       = "187"
     let s:base3       = "230"
-    let s:yellow      = "136"
+    let s:yellow      = "184"
     let s:orange      = "166"
     let s:red         = "124"
-    let s:magenta     = "125"
+    let s:magenta     = "161"
     let s:violet      = "61"
     let s:blue        = "33"
     let s:cyan        = "37"
-    let s:green       = "64"
+    let s:green       = "28"
 else
     let s:vmode       = "cterm"
     let s:bright      = "* term=bold cterm=bold"
@@ -772,7 +771,7 @@ let hs_highlight_boolean=1
 " highlight delims, see the plugin referenced above
 let hs_highlight_delimiters=1
 
-exe "hi! cPreCondit". s:fg_orange.s:bg_none   .s:fmt_none
+"exe "hi! cPreCondit". s:fg_orange.s:bg_none   .s:fmt_none
 
 exe "hi! VarId"    . s:fg_blue   .s:bg_none   .s:fmt_none
 exe "hi! ConId"    . s:fg_yellow .s:bg_none   .s:fmt_none
@@ -967,7 +966,7 @@ autocmd GUIEnter * if (s:vmode != "gui") | exe "colorscheme " . g:colors_name | 
 "
 " vim:foldmethod=marker:foldlevel=0
 "}}}
-
+"{{{ Custom definition
 "hi IncSearch -- no settings --
 "hi WildMenu -- no settings --
 hi SignColumn  guibg=#384048 guisp=#384048 gui=NONE ctermfg=103 ctermbg=238 cterm=NONE
@@ -986,7 +985,6 @@ hi DiffText guifg=NONE guibg=#121212 guisp=#121212 gui=NONE ctermfg=NONE ctermbg
 hi ErrorMsg guifg=NONE guibg=#902020 guisp=#902020 gui=NONE ctermfg=NONE ctermbg=88 cterm=NONE
 "hi Ignore -- no settings --
 hi Debug  guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
-hi PMenuSbar guifg=NONE guibg=#848688 guisp=#848688 gui=NONE ctermfg=NONE ctermbg=102 cterm=NONE
 hi Identifier  guibg=NONE guisp=NONE gui=NONE ctermfg=37 ctermbg=NONE cterm=NONE
 hi SpecialChar  guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
 hi Conditional  guibg=NONE guisp=NONE gui=NONE ctermfg=184 ctermbg=NONE cterm=NONE
@@ -994,12 +992,11 @@ hi StorageClass  guibg=NONE guisp=NONE gui=NONE ctermfg=28 ctermbg=NONE cterm=NO
 hi Todo  guibg=NONE guisp=NONE gui=bold ctermfg=160 ctermbg=NONE cterm=bold
 hi Special  guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
 hi LineNr  guibg=#151515 guisp=#151515 gui=NONE ctermfg=59 ctermbg=233 cterm=NONE
-hi StatusLine  guibg=#101010 guisp=#101010 gui=italic ctermfg=255 ctermbg=233 cterm=NONE
+hi StatusLine ctermfg=244 ctermbg=235 cterm=NONE
 hi Normal  guibg=#151515 guisp=#151515 gui=NONE ctermfg=8 ctermbg=233 cterm=NONE
 hi Label  guibg=NONE guisp=NONE gui=NONE ctermfg=184 ctermbg=NONE cterm=NONE
 hi CTagsImport  guibg=NONE guisp=NONE gui=NONE ctermfg=32 ctermbg=NONE cterm=NONE
-hi PMenuSel  guibg=#eeeeee guisp=#eeeeee gui=NONE ctermfg=233 ctermbg=255 cterm=NONE
-hi Search  guibg=#302028 guisp=#302028 gui=underline ctermfg=218 ctermbg=236 cterm=underline
+hi Search ctermfg=232 ctermbg=244 cterm=underline
 hi CTagsGlobalVariable  guibg=NONE guisp=NONE gui=NONE ctermfg=14 ctermbg=NONE cterm=NONE
 hi Delimiter  guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
 hi Statement  guibg=NONE guisp=NONE gui=NONE ctermfg=184 ctermbg=NONE cterm=NONE
@@ -1018,7 +1015,7 @@ hi TabLineFill  guibg=NONE guisp=NONE gui=NONE ctermfg=247 ctermbg=NONE cterm=NO
 "hi WarningMsg -- no settings --
 "hi VisualNOS -- no settings --
 hi DiffDelete  guibg=#121212 guisp=#121212 gui=NONE ctermfg=124 ctermbg=233 cterm=NONE
-"hi ModeMsg -- no settings --
+"hi ModeMsg ctermfg=160 ctermbg=NONE cterm=NONE
 hi CursorColumn guifg=NONE guibg=#1c1c1c guisp=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
 hi Define  guibg=NONE guisp=NONE gui=NONE ctermfg=32 ctermbg=NONE cterm=NONE
 hi Function  guibg=NONE guisp=NONE gui=NONE ctermfg=28 ctermbg=NONE cterm=NONE
@@ -1037,13 +1034,17 @@ hi DiffChange  guibg=#121212 guisp=#121212 gui=NONE ctermfg=25 ctermbg=233 cterm
 hi Cursor guifg=NONE guibg=#b0d0f0 guisp=#b0d0f0 gui=NONE ctermfg=NONE ctermbg=153 cterm=NONE
 "hi SpellLocal -- no settings --
 hi Error guifg=NONE guibg=#902020 guisp=#902020 gui=NONE ctermfg=NONE ctermbg=88 cterm=NONE
-hi PMenu  guibg=#000000 guisp=#000000 gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 hi SpecialKey  guibg=#343434 guisp=#343434 gui=NONE ctermfg=61 ctermbg=NONE cterm=NONE
 hi Constant  guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
 "hi DefinedName -- no settings --
 hi Tag  guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
 hi String  guibg=NONE guisp=NONE gui=NONE ctermfg=161 ctermbg=NONE cterm=NONE
-hi PMenuThumb guifg=NONE guibg=#a4a6a8 guisp=#a4a6a8 gui=NONE ctermfg=NONE ctermbg=248 cterm=NONE
+" P {{{
+hi PMenu  ctermfg=244 ctermbg=234 cterm=NONE
+hi PMenuSbar ctermfg=NONE ctermbg=234 cterm=NONE
+hi PMenuSel ctermfg=232 ctermbg=244 cterm=NONE
+hi PMenuThumb ctermfg=NONE ctermbg=244 cterm=NONE
+" }}}
 hi MatchParen  guibg=#80a090 guisp=#80a090 gui=bold ctermfg=15 ctermbg=108 cterm=bold
 hi LocalVariable  guibg=NONE guisp=NONE gui=NONE ctermfg=8 ctermbg=NONE cterm=NONE
 hi Repeat  guibg=NONE guisp=NONE gui=NONE ctermfg=184 ctermbg=NONE cterm=NONE
@@ -1069,4 +1070,4 @@ hi rubysymbol  guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NON
 hi rubycontrol  guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 hi rubyidentifier  guibg=NONE guisp=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
 
-hi phpFunctions ctermfg=61 ctermbg=NONE cterm=NONE
+hi phpFunctions ctermfg=61 ctermbg=NONE cterm=NONE"}}}
