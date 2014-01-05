@@ -1,3 +1,10 @@
+Index: b/.gitignore
+deleted file mode 100644
+===================================================================
+--- a/.gitignore
++++ /dev/null
+@@ -1 +0,0 @@
+-git_diff
 Index: b/bundle/vim-colors-solarized/colors/.DS_Store
 deleted file mode 100644
 ===================================================================
