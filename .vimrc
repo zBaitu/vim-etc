@@ -64,7 +64,7 @@ let g:c_syntax_for_h = 1
 " autocmd FileType html setlocal shiftwidth=2 tabstop=2
 " autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 " autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType vim setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+"autocmd FileType vim setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 
 
@@ -103,6 +103,19 @@ function! LoadCscope()
     if (!empty(db))
         let path = strpart(db, 0, match(db, "/cscope.out$"))
         exe "cs add " . db . " " . path
+    endif
+endfunction
+
+" setnu/nonu
+function SetNumSwitch()
+    if g:is_set_nu == 1
+        :set nonu
+        :TagbarToggle
+        let g:is_set_nu = 0
+    else
+        :set nu
+        :TagbarToggle
+        let g:is_set_nu = 1
     endif
 endfunction
 
@@ -186,6 +199,12 @@ cmap <F8> //--------------------------------------------------------------------
 map <F9> :call InsertLicense()<cr>
 imap <F9> <esc>:call InsertLicense()<cr>
 cmap <F9> <esc>:call InsertLicense()<cr>
+
+" F11 set nu/nonu
+let g:is_set_nu = 1
+map <F11> :call SetNumSwitch()<cr>
+imap <F11> <esc>:call SetNumSwitch()<cr>
+cmap <F11> <esc>:call SetNumSwitch()<cr>
 
 " F12 match error
 "map <F12> :call MatchError()<cr>
