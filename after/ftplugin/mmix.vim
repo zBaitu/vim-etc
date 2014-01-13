@@ -1,4 +1,4 @@
-runtime! common.vim
+runtime! ftplugin/common.vim
 
 "----------------------------------------
 " abbreviation 

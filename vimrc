@@ -8,14 +8,6 @@ filetype plugin indent on
 
 
 "---------------------------------------
-" sessions
-"---------------------------------------
-silent! source $HOME/.vim/%:e.vim
-
-
-
-
-"---------------------------------------
 " settings
 "---------------------------------------
 syntax on
@@ -25,7 +17,6 @@ set autoindent
 set backspace=indent,eol,start
 set csto=1
 set encoding=utf-8
-"set expandtab
 set fileencodings=utf-8,gbk
 set foldmethod=marker
 set foldlevel=0
@@ -34,14 +25,11 @@ set nocompatible
 set nocsverb
 set number
 set ruler
-"set shiftwidth=4
 set showtabline=0
-"set softtabstop=4
 set t_Co=256
 "do not clear vim screen when quit
 set t_te=
 set t_ti=
-"set tabstop=4
 set tags=tags;
 set textwidth=120
 set wrap
@@ -145,7 +133,7 @@ au BufEnter /* call LoadCscope()
 
 " tagbar
 if ! &diff
-    autocmd Filetype mmix,cweb,scheme,asm,h,c,hpp,cpp,cc,CC,zsh,sh,python,ruby,php,make,vim,lex,text,cmake :TagbarToggle
+    autocmd Filetype markdown,mmix,cweb,scheme,asm,h,c,hpp,cpp,cc,CC,zsh,sh,python,ruby,php,make,vim,lex,text,cmake :TagbarToggle
 else
 endif
 
