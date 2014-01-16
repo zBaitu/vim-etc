@@ -97,8 +97,6 @@ syn keyword mmixOpcode    JMP PUSHJ GETA PUT
 syn keyword mmixOpcode    POP RESUME SAVE UNSAVE SYNC SWYM GET TRIP
 syn keyword mmixOpcode    SET LDA
 
-syn region  mmixNAMESPACE start="^\s*PREFIX" skip="\\$" end="$"
-
 " switch back to being case sensitive
 syn case match
 
@@ -106,6 +104,9 @@ syn case match
 syn match mmixRegister        "$[0-9]*"
 syn match mmixRegister        ":*r[A-Z]"
 syn keyword mmixRegister    rBB rTT rWW rXX rYY rZZ
+
+syn region  mmixNAMESPACE start="^\s*PREFIX" skip="\\$" end="$"
+syn region mmixTEST start="\[" end="\]"
 
 " The default methods for highlighting.  Can be overridden later
 hi def link mmixAt        Type
@@ -129,5 +130,6 @@ hi def link mmixIdentifier    Normal
 hi def link mmixSpecialComment Comment
 
 hi mmixNAMESPACE ctermfg=166 ctermbg=NONE cterm=NONE"
+hi mmixTEST ctermfg=61 ctermbg=NONE cterm=NONE"
 
 let b:current_syntax = "mmix"
