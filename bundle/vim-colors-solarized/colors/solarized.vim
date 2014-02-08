@@ -993,7 +993,7 @@ hi Todo  guibg=NONE guisp=NONE gui=bold ctermfg=160 ctermbg=NONE cterm=bold
 hi Special  guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
 hi LineNr  guibg=#151515 guisp=#151515 gui=NONE ctermfg=59 ctermbg=233 cterm=NONE
 hi StatusLine ctermfg=244 ctermbg=235 cterm=NONE
-hi Normal  guibg=#151515 guisp=#151515 gui=NONE ctermfg=8 ctermbg=233 cterm=NONE
+hi Normal  ctermfg=244 ctermbg=233 cterm=NONE
 hi Label  guibg=NONE guisp=NONE gui=NONE ctermfg=184 ctermbg=NONE cterm=NONE
 hi CTagsImport  guibg=NONE guisp=NONE gui=NONE ctermfg=32 ctermbg=NONE cterm=NONE
 hi Search ctermfg=232 ctermbg=244 cterm=underline

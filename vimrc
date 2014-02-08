@@ -219,7 +219,7 @@ nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
 " tagbar
 "----------------------------------------
 let tagbar_left=1
-let tagbar_width=34
+let tagbar_width=45
 let tagbar_sort=0
 let tagbar_compact=1
 

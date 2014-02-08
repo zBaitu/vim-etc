@@ -53,7 +53,6 @@
 "
 "
 
-echo 'aaaaaaaaa'
 runtime! common.vim
 if exists("b:current_syntax")
   finish
