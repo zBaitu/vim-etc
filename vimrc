@@ -188,6 +188,11 @@ map <F9> :call InsertLicense()<cr>
 imap <F9> <esc>:call InsertLicense()<cr>
 cmap <F9> <esc>:call InsertLicense()<cr>
 
+" F10 YouCompleteMe :YcmDiags
+map <F10> :YcmDiags<cr>
+imap <F10> <esc>:YcmDiags<cr>
+cmap <F10> <esc>:YcmDiags<cr>
+
 " F11 set nu/nonu
 let g:is_set_nu = 1
 map <F11> :call SetNumSwitch()<cr>
@@ -211,6 +216,12 @@ nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+
+
+" YouCompleteMe
+nmap gl :YcmCompleter GoToDeclaration<CR>
+nmap gf :YcmCompleter GoToDefinition<CR>
+nmap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 
@@ -242,3 +253,17 @@ let NERDTreeMinimalUI=1
 "----------------------------------------
 let g:solarized_termcolors=256
 colorscheme solarized
+
+
+
+
+"----------------------------------------
+" YouCompleteMe
+"----------------------------------------
+let g:ycm_confirm_extra_conf = 1
+let g:ycm_key_invoke_completion = '<C-@>'
+let g:ycm_always_populate_location_list = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
