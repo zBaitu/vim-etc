@@ -129,7 +129,7 @@ hi def link mmixType    Type
 hi def link mmixIdentifier    Normal
 hi def link mmixSpecialComment Comment
 
-hi mmixNAMESPACE ctermfg=166 ctermbg=NONE cterm=NONE"
-hi mmixTEST ctermfg=61 ctermbg=NONE cterm=NONE"
+hi mmixNAMESPACE ctermfg=25 ctermbg=NONE cterm=NONE"
+hi mmixTEST ctermfg=25 ctermbg=NONE cterm=NONE"
 
 let b:current_syntax = "mmix"
