@@ -94,6 +94,28 @@ function! LoadCscope()
     endif
 endfunction
 
+" set paste
+let g:set_paste = 0
+function SetPaste()
+    if g:set_paste == 0
+        :set paste
+        let g:set_paste = 1
+    else
+        :set nopaste
+        let g:set_paste = 0
+    endif
+    echo 'g:set_paste:'g:set_paste
+endfunction
+
+" license
+function InsertLicense()
+    let filename = expand('%:t')
+    let dot = strridx( filename, "." )
+    let suffix = strpart( filename, dot )
+    let license_file = printf( "%s%s", "~/.vim/license", suffix )
+    exe "read" license_file
+endfunction
+
 " setnu/nonu
 function SetNumSwitch()
     if g:is_set_nu == 1
@@ -105,15 +127,6 @@ function SetNumSwitch()
         :TagbarToggle
         let g:is_set_nu = 1
     endif
-endfunction
-
-" license
-function InsertLicense()
-    let filename = expand('%:t')
-    let dot = strridx( filename, "." )
-    let suffix = strpart( filename, dot )
-    let license_file = printf( "%s%s", "~/.vim/license", suffix )
-    exe "read" license_file
 endfunction
 
 
@@ -178,10 +191,10 @@ imap <F7> <esc>:call Showtabline()<cr>i
 cmap <F7> <esc>:call Showtabline()<cr>
 
 
-" F8 c++ comment line
-map <F8> i//-------------------------------------------------------------------------------------------------------------------//
-imap <F8> //-------------------------------------------------------------------------------------------------------------------//
-cmap <F8> //-------------------------------------------------------------------------------------------------------------------//<esc>
+" F8 set paste
+map <F8> :call SetPaste()<cr>
+imap <F8> <esc>:call SetPaste()<cr>
+cmap <F8> <esc>:call SetPaste()<cr>
 
 " F9 license
 map <F9> :call InsertLicense()<cr>
@@ -260,10 +273,26 @@ colorscheme solarized
 "----------------------------------------
 " YouCompleteMe
 "----------------------------------------
-let g:ycm_confirm_extra_conf = 1
+let g:ycm_confirm_extra_conf = 0
+
 let g:ycm_key_invoke_completion = '<C-@>'
-let g:ycm_always_populate_location_list = 1
+let g:ycm_key_list_select_completion = ['<Down>', '<C-n>']
+let g:ycm_key_list_previous_completion = ['<Up>', '<C-p>']
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+let g:ycm_always_populate_location_list = 1
+
+let g:ycm_semantic_triggers =  {
+    \   'c' : ['->', '.'],
+    \   'objc' : ['->', '.'],
+    \   'ocaml' : ['.', '#'],
+    \   'cpp,objcpp' : ['->', '.', '::'],
+    \   'perl' : ['->'],
+    \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+    \   'ruby' : ['.', '::'],
+    \   'lua' : ['.', ':'],
+    \   'erlang' : [':'],
+    \ }
