@@ -190,16 +190,15 @@ map <F7> :call Showtabline()<cr>
 imap <F7> <esc>:call Showtabline()<cr>i
 cmap <F7> <esc>:call Showtabline()<cr>
 
+" F8 license
+map <F8> :call InsertLicense()<cr>
+imap <F8> <esc>:call InsertLicense()<cr>
+cmap <F8> <esc>:call InsertLicense()<cr>
 
-" F8 set paste
-map <F8> :call SetPaste()<cr>
-imap <F8> <esc>:call SetPaste()<cr>
-cmap <F8> <esc>:call SetPaste()<cr>
-
-" F9 license
-map <F9> :call InsertLicense()<cr>
-imap <F9> <esc>:call InsertLicense()<cr>
-cmap <F9> <esc>:call InsertLicense()<cr>
+" F9 set paste
+map <F9> :call SetPaste()<cr>
+imap <F9> <esc>:call SetPaste()<cr>
+cmap <F9> <esc>:call SetPaste()<cr>
 
 " F10 YouCompleteMe :YcmDiags
 map <F10> :YcmDiags<cr>
@@ -273,6 +272,7 @@ colorscheme solarized
 "----------------------------------------
 " YouCompleteMe
 "----------------------------------------
+let g:ycm_filetype_specific_completion_to_disable = ['php']
 let g:ycm_confirm_extra_conf = 0
 
 let g:ycm_key_invoke_completion = '<C-@>'
