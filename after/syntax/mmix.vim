@@ -2,7 +2,7 @@
 "  finish
 "endif
 
-" syn case ignore
+syn case match
 
 " MMIX data types
 syn keyword mmixType    BYTE WYDE TETRA OCTA
@@ -114,7 +114,6 @@ hi def link mmixPseudo    Type
 hi def link mmixRegister    Special
 hi def link mmixSegments    Type
 
-hi def link mmixLabel    Macro
 hi def link mmixComment    Comment
 hi def link mmixOpcode    Keyword
 
@@ -131,5 +130,6 @@ hi def link mmixSpecialComment Comment
 
 hi mmixNAMESPACE ctermfg=25 ctermbg=NONE cterm=NONE"
 hi mmixTEST ctermfg=25 ctermbg=NONE cterm=NONE"
+hi mmixLabel ctermfg=166 ctermbg=NONE cterm=NONE"
 
 let b:current_syntax = "mmix"
