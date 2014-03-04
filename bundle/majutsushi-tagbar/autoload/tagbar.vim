@@ -589,6 +589,40 @@ function! s:InitTypes()
         \ 'class' : 'c'
     \ }
     let s:known_types.ruby = type_ruby
+    " Rust {{{3
+    let type_rust = s:TypeInfo.New()
+    let type_rust.ctagstype = 'rust'
+    let type_rust.kinds     = [
+        \ {'short' : 'd', 'long' : 'macros',      'fold' : 1, 'stl' : 0},
+        \ {'short' : 'g', 'long' : 'enums',       'fold' : 1, 'stl' : 1},
+        \ {'short' : 'e', 'long' : 'enumerators', 'fold' : 1, 'stl' : 0},
+        \ {'short' : 'n', 'long' : 'namespaces',  'fold' : 0, 'stl' : 1},
+        \ {'short' : 's', 'long' : 'structs',     'fold' : 1, 'stl' : 1},
+        \ {'short' : 'u', 'long' : 'unions',      'fold' : 1, 'stl' : 1},
+        \ {'short' : 'm', 'long' : 'members',     'fold' : 1, 'stl' : 0},
+        \ {'short' : 't', 'long' : 'typedefs',    'fold' : 1, 'stl' : 0},
+        \ {'short' : 'v', 'long' : 'variables',   'fold' : 1, 'stl' : 0},
+        \ {'short' : 'p', 'long' : 'prototypes',  'fold' : 0, 'stl' : 0},
+        \ {'short' : 'c', 'long' : 'classes',     'fold' : 1, 'stl' : 1},
+        \ {'short' : 'f', 'long' : 'functions',   'fold' : 0, 'stl' : 1}
+    \ ]
+    let type_rust.sro        = '::'
+    let type_rust.kind2scope = {
+        \ 'n' : 'namespace',
+        \ 'g' : 'enum',
+        \ 's' : 'struct',
+        \ 'u' : 'union',
+        \ 'c' : 'class'
+    \ }
+    let type_rust.scope2kind = {
+        \ 'namespace' : 'n',
+        \ 'enum'      : 'g',
+        \ 'struct'    : 's',
+        \ 'union'     : 'u',
+        \ 'class'     : 'c'
+    \ }
+    let type_rust.deffile = '/home/zBaitu/.vim/bundle/majutsushi-tagbar/plugin/ctags.rust'
+    let s:known_types.rust = type_rust
     " Scheme {{{3
     let type_scheme = s:TypeInfo.New()
     let type_scheme.ctagstype = 'scheme'

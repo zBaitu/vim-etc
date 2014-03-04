@@ -146,7 +146,7 @@ au BufEnter /* call LoadCscope()
 
 " tagbar
 if ! &diff
-    autocmd Filetype markdown,mmix,cweb,scheme,asm,h,c,hpp,cpp,cc,CC,zsh,sh,python,ruby,php,make,vim,lex,text,cmake :TagbarToggle
+    autocmd Filetype markdown,mmix,cweb,scheme,asm,h,c,hpp,cpp,cc,CC,zsh,sh,python,ruby,rust,php,make,vim,lex,text,cmake :TagbarToggle
 else
 endif
 
