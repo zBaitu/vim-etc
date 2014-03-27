@@ -621,7 +621,7 @@ function! s:InitTypes()
         \ 'union'     : 'u',
         \ 'class'     : 'c'
     \ }
-    let type_rust.deffile = '/home/zBaitu/.vim/bundle/majutsushi-tagbar/plugin/ctags.rust'
+    let type_rust.deffile = '/home/baitu/.vim/bundle/majutsushi-tagbar/plugin/ctags.rust'
     let s:known_types.rust = type_rust
     " Scheme {{{3
     let type_scheme = s:TypeInfo.New()
