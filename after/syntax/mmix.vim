@@ -97,9 +97,6 @@ syn keyword mmixOpcode    JMP PUSHJ GETA PUT
 syn keyword mmixOpcode    POP RESUME SAVE UNSAVE SYNC SWYM GET TRIP
 syn keyword mmixOpcode    SET LDA
 
-" switch back to being case sensitive
-syn case match
-
 " general-purpose and special-purpose registers
 syn match mmixRegister        "$[0-9]*"
 syn match mmixRegister        ":*r[A-Z]"
