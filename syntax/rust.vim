@@ -234,11 +234,11 @@ hi def link rustIdentifier    Identifier
 hi def link rustCapsIdent     rustIdentifier
 hi def link rustModPath       Include
 hi def link rustModPathSep    Delimiter
-hi def link rustFunction      Function
-hi def link rustFuncName      Function
-hi def link rustFuncCall      Function
+hi def link rustFunction      rustFunc
+hi def link rustFuncName      rustFunc
+hi def link rustFuncCall      rustFunc
 hi def link rustCommentLine   Comment
-hi def link rustCommentLineDoc SpecialComment
+hi def link rustCommentLineDoc Comment
 hi def link rustCommentBlock  rustCommentLine
 hi def link rustCommentBlockDoc rustCommentLineDoc
 hi def link rustAssert        PreCondit
@@ -251,6 +251,8 @@ hi def link rustDeriving      PreProc
 hi def link rustStorage       StorageClass
 hi def link rustObsoleteStorage Error
 hi def link rustLifetime      Special
+
+hi rustFunc ctermfg=166 ctermbg=NONE cterm=NONE
 
 " Other Suggestions:
 " hi rustAttribute ctermfg=cyan

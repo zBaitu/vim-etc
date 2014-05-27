@@ -1071,5 +1071,7 @@ hi rubysymbol  guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NON
 hi rubycontrol  guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 hi rubyidentifier  guibg=NONE guisp=NONE gui=NONE ctermfg=147 ctermbg=NONE cterm=NONE
 
-hi phpFunctions ctermfg=166 ctermbg=NONE cterm=NONE"
+hi phpFunctions ctermfg=166 ctermbg=NONE cterm=NONE
 hi TODO ctermfg=37 ctermbg=NONE cterm=NONE"
+
+" 
