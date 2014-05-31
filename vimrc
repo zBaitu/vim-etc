@@ -146,7 +146,7 @@ au BufEnter /* call LoadCscope()
 
 " tagbar
 if ! &diff
-    autocmd Filetype markdown,mmix,cweb,scheme,asm,h,c,hpp,cpp,cc,CC,zsh,sh,python,ruby,rust,php,make,vim,lex,text,cmake :TagbarToggle
+    autocmd Filetype idl,markdown,mmix,cweb,scheme,asm,h,c,hpp,cpp,cc,CC,zsh,sh,python,ruby,rust,php,make,vim,lex,text,cmake :TagbarToggle
 else
 endif
 
@@ -245,6 +245,7 @@ let tagbar_left=1
 let tagbar_width=45
 let tagbar_sort=0
 let tagbar_compact=1
+let g:tagbar_show_linenumbers=1
 
 
 
