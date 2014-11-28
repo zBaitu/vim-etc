@@ -1,5 +1,5 @@
 " MMIX or VMS makefile
-au BufNewFile,BufRead *.mms,*.mmt			call s:FTmms()
+au BufNewFile,BufRead *.mms,*.mmt call s:FTmms()
 
 func! s:FTmms()
   let n = 1
