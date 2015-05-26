@@ -595,7 +595,7 @@ function! s:InitTypes() abort
         \ {'short' : 's', 'long' : 'structs',     'fold' : 1, 'stl' : 1},
         \ {'short' : 'u', 'long' : 'unions',      'fold' : 1, 'stl' : 1},
         \ {'short' : 'm', 'long' : 'members',     'fold' : 1, 'stl' : 0},
-        \ {'short' : 't', 'long' : 'typedefs',    'fold' : 1, 'stl' : 0},
+        \ {'short' : 't', 'long' : 'typedefs',    'fold' : 0, 'stl' : 0},
         \ {'short' : 'v', 'long' : 'variables',   'fold' : 1, 'stl' : 0},
         \ {'short' : 'p', 'long' : 'prototypes',  'fold' : 0, 'stl' : 0},
         \ {'short' : 'c', 'long' : 'classes',     'fold' : 1, 'stl' : 1},
