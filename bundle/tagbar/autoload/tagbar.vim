@@ -588,12 +588,12 @@ function! s:InitTypes() abort
     let type_rust = s:TypeInfo.New()
     let type_rust.ctagstype = 'rust'
     let type_rust.kinds     = [
-        \ {'short' : 'd', 'long' : 'macros',      'fold' : 1, 'stl' : 0},
-        \ {'short' : 'g', 'long' : 'enums',       'fold' : 1, 'stl' : 1},
-        \ {'short' : 'e', 'long' : 'enumerators', 'fold' : 1, 'stl' : 0},
+        \ {'short' : 'd', 'long' : 'macros',      'fold' : 0, 'stl' : 0},
+        \ {'short' : 'g', 'long' : 'enums',       'fold' : 0, 'stl' : 1},
+        \ {'short' : 'e', 'long' : 'enumerators', 'fold' : 0, 'stl' : 0},
         \ {'short' : 'n', 'long' : 'namespaces',  'fold' : 0, 'stl' : 1},
-        \ {'short' : 's', 'long' : 'structs',     'fold' : 1, 'stl' : 1},
-        \ {'short' : 'u', 'long' : 'unions',      'fold' : 1, 'stl' : 1},
+        \ {'short' : 's', 'long' : 'structs',     'fold' : 0, 'stl' : 1},
+        \ {'short' : 'u', 'long' : 'unions',      'fold' : 0, 'stl' : 1},
         \ {'short' : 'm', 'long' : 'members',     'fold' : 1, 'stl' : 0},
         \ {'short' : 't', 'long' : 'typedefs',    'fold' : 0, 'stl' : 0},
         \ {'short' : 'v', 'long' : 'variables',   'fold' : 1, 'stl' : 0},
