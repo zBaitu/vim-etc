@@ -257,34 +257,3 @@ let NERDTreeMinimalUI=1
 "----------------------------------------
 let g:solarized_termcolors=256
 colorscheme solarized
-
-
-
-
-"----------------------------------------
-" YouCompleteMe
-"----------------------------------------
-let g:ycm_filetype_specific_completion_to_disable = ['php']
-let g:ycm_confirm_extra_conf = 0
-
-let g:ycm_key_invoke_completion = '<C-@>'
-let g:ycm_key_list_select_completion = ['<Down>', '<C-n>']
-let g:ycm_key_list_previous_completion = ['<Up>', '<C-p>']
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-let g:ycm_always_populate_location_list = 1
-
-let g:ycm_semantic_triggers =  {
-    \   'c' : ['->', '.'],
-    \   'objc' : ['->', '.'],
-    \   'ocaml' : ['.', '#'],
-    \   'cpp,objcpp' : ['->', '.', '::'],
-    \   'perl' : ['->'],
-    \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
-    \   'ruby' : ['.', '::'],
-    \   'lua' : ['.', ':'],
-    \   'erlang' : [':'],
-    \ }
