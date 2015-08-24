@@ -25,11 +25,14 @@ set nocompatible
 set nocsverb
 set number
 set ruler
+set shiftwidth=4
 set showtabline=0
+set softtabstop=4
 set t_Co=256
 "do not clear vim screen when quit
 set t_te=
 set t_ti=
+set tabstop=4
 set tags=tags;
 set textwidth=120
 set wrap
@@ -146,7 +149,7 @@ au BufEnter /* call LoadCscope()
 
 " tagbar
 if ! &diff
-    autocmd Filetype asm,c,cc,CC,cmake,cpp,cweb,h,hpp,idl,javascript,lex,make,markdown,mmix,php,python,ruby,rust,scheme,sh,text,toml,vim,yaml,zsh :TagbarToggle
+    autocmd Filetype asm,c,cc,CC,cmake,cpp,cweb,go,h,hpp,idl,javascript,lex,make,markdown,mmix,php,python,ruby,rust,scheme,sh,text,toml,vim,yaml,zsh :TagbarToggle
 else
 endif
 
@@ -190,10 +193,23 @@ map <F7> :call Showtabline()<cr>
 imap <F7> <esc>:call Showtabline()<cr>i
 cmap <F7> <esc>:call Showtabline()<cr>
 
+
 " F8 set paste
 map <F8> :call SetPaste()<cr>
 imap <F8> <esc>:call SetPaste()<cr>
 cmap <F8> <esc>:call SetPaste()<cr>
+
+
+" F9 w3m
+map <F9> :TagbarToggle<cr>:W3m 
+imap <F9> <esc>:TagbarToggle<cr>:W3m 
+cmap <F9> <esc>:TagbarToggle<cr>:W3m 
+
+
+" F10 w3m history
+map <F10> :TagbarToggle<cr>:W3mHistory<cr>
+imap <F10> <esc>:TagbarToggle<cr>:W3mHistory<cr>
+cmap <F10> <esc>:TagbarToggle<cr>:W3mHistory<cr>
 
 
 " F11 set nu/nonu
@@ -219,12 +235,6 @@ nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-
-
-" YouCompleteMe
-nmap gl :YcmCompleter GoToDeclaration<CR>
-nmap gf :YcmCompleter GoToDefinition<CR>
-nmap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 
@@ -257,3 +267,14 @@ let NERDTreeMinimalUI=1
 "----------------------------------------
 let g:solarized_termcolors=256
 colorscheme solarized
+
+
+
+
+"----------------------------------------
+" racer
+"----------------------------------------
+set hidden
+let g:racer_cmd = '/home/baitu/Mozilla/Rust/racer/target/release/racer'
+let $RUST_SRC_PATH = '/home/baitu/Mozilla/Rust/rust-1.2.0/src'
+imap <C-j> <c-x><c-o>
