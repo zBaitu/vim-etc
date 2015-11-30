@@ -183,9 +183,12 @@ cmap <F5> <esc>:TagbarToggle<cr>
 
 
 " F6 nerdtree
-map <F6> :NERDTreeToggle<cr>
-imap <F6> <esc>:NERDTreeToggle<cr>i
-cmap <F6> <esc>:NERDTreeToggle<cr>
+"map <F6> :NERDTreeToggle<cr>
+"imap <F6> <esc>:NERDTreeToggle<cr>i
+"cmap <F6> <esc>:NERDTreeToggle<cr>
+map <F6> :set scrollbind<cr>
+imap <F6> <esc>:set scrollbind<cr>i
+cmap <F6> <esc>:set scrollbind<cr>
 
 
 " F7 showtabline
@@ -275,6 +278,15 @@ colorscheme solarized
 " racer
 "----------------------------------------
 set hidden
-let g:racer_cmd = '/home/baitu/Mozilla/Rust/racer/target/release/racer'
-let $RUST_SRC_PATH = '/home/baitu/Mozilla/Rust/rust-1.2.0/src'
+let g:racer_cmd = '/home/baitu/mozilla/rust/crates/racer/target/release/racer'
+let $RUST_SRC_PATH = '/home/baitu/mozilla/rust/rustc-1.4.0/src'
 imap <C-j> <c-x><c-o>
+
+
+
+
+"----------------------------------------
+" autoformat
+"----------------------------------------
+let g:formatdef_rustfmt = '"/home/baitu/mozilla/rust/crates/rustfmt/target/debug/rustfmt"'
+let g:formatters_rust = ['rustfmt']
