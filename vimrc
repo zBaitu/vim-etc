@@ -138,6 +138,8 @@ endfunction
 "----------------------------------------
 " auto commands
 "----------------------------------------
+" auto format
+au BufWrite *.rs :Autoformat
 
 " Remember the last position of the cursor.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
