@@ -58,8 +58,8 @@ syn match rustMacroVariable "$\w\+"
 syn keyword   rustReservedKeyword alignof become do offsetof priv pure sizeof typeof unsized yield abstract virtual final override macro
 
 " Built-in types {{{2
-syn keyword   rustType        isize usize char bool u8 u16 u32 u64 f32
-syn keyword   rustType        f64 i8 i16 i32 i64 str Self
+syn keyword   rustType        isize usize char bool u8 u16 u32 u64 f32 str
+syn keyword   rustType        f64 i8 i16 i32 i64 Self
 
 " Things from the libstd v1 prelude (src/libstd/prelude/v1.rs) {{{2
 " This section is just straight transformation of the contents of the prelude,
@@ -125,7 +125,6 @@ syn match     rustMacro       '#\w\(\w\)*' contains=rustAssert,rustPanic
 
 syn match     rustEscapeError   display contained /\\./
 syn match     rustEscape        display contained /\\\([nrt0\\'"]\|x\x\{2}\)/
-syn match     rustEscapeUnicode display contained /\\\(u\x\{4}\|U\x\{8}\)/
 syn match     rustEscapeUnicode display contained /\\u{\x\{1,6}}/
 syn match     rustStringContinuation display contained /\\\n\s*/
 syn region    rustString      start=+b"+ skip=+\\\\\|\\"+ end=+"+ contains=rustEscape,rustEscapeError,rustStringContinuation

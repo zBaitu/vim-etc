@@ -23,6 +23,7 @@ set foldlevel=0
 set hlsearch
 set nocompatible
 set nocsverb
+set nofoldenable
 set number
 set ruler
 set shiftwidth=4
@@ -139,7 +140,8 @@ endfunction
 " auto commands
 "----------------------------------------
 " auto format
-au BufWrite *.rs :Autoformat
+"au BufWrite *.rs :Autoformat
+"au VimLeave *.rs :Autoformat
 
 " Remember the last position of the cursor.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -151,7 +153,7 @@ au BufEnter /* call LoadCscope()
 
 " tagbar
 if ! &diff
-    autocmd Filetype asm,c,cc,CC,cmake,cpp,cweb,go,h,hpp,idl,javascript,lex,make,markdown,mmix,php,python,ruby,rust,scheme,sh,text,toml,vim,yaml,zsh :TagbarToggle
+    autocmd Filetype asm,c,cc,CC,cmake,cpp,cweb,go,h,hpp,idl,javascript,lex,make,markdown,mmix,php,python,ruby,rust,scheme,sh,text,toml,vim,yacc,yaml,zsh :TagbarToggle
 else
 endif
 
@@ -160,6 +162,10 @@ endif
 "----------------------------------------
 " map
 "----------------------------------------
+map <F1> :Autoformat<cr><F2>
+imap <F1> <esc>:Autoformat<cr><F2>
+cmap <F1> <esc>:Autoformat<cr><F2>
+
 " F2 save file
 map <F2> :w<cr>
 imap <F2> <esc>:w<cr>
@@ -188,9 +194,9 @@ cmap <F5> <esc>:TagbarToggle<cr>
 "map <F6> :NERDTreeToggle<cr>
 "imap <F6> <esc>:NERDTreeToggle<cr>i
 "cmap <F6> <esc>:NERDTreeToggle<cr>
-map <F6> :set scrollbind<cr>
-imap <F6> <esc>:set scrollbind<cr>i
-cmap <F6> <esc>:set scrollbind<cr>
+map <F6> :call SetNumSwitch()<cr>
+imap <F6> <esc>:call SetNumSwitch()<cr>
+cmap <F6> <esc>:call SetNumSwitch()<cr>
 
 
 " F7 showtabline
@@ -281,7 +287,7 @@ colorscheme solarized
 "----------------------------------------
 set hidden
 let g:racer_cmd = '/home/baitu/mozilla/rust/crates/racer/target/release/racer'
-let $RUST_SRC_PATH = '/home/baitu/mozilla/rust/rustc-1.4.0/src'
+let $RUST_SRC_PATH = '/home/baitu/mozilla/rust/rust/src'
 imap <C-j> <c-x><c-o>
 
 
