@@ -133,6 +133,17 @@ function SetNumSwitch()
     endif
 endfunction
 
+" set list
+function SetList()
+    if g:is_set_list == 1
+        :set nolist
+        let g:is_set_list = 0
+    else
+        :set list
+        let g:is_set_list = 1
+    endif
+endfunction
+
 
 
 
@@ -200,9 +211,10 @@ cmap <F6> <esc>:call SetNumSwitch()<cr>
 
 
 " F7 showtabline
-map <F7> :call Showtabline()<cr>
-imap <F7> <esc>:call Showtabline()<cr>i
-cmap <F7> <esc>:call Showtabline()<cr>
+let g:is_set_list = 0
+map <F7> :call SetList()<cr>
+imap <F7> <esc>:call SetList()<cr>i
+cmap <F7> <esc>:call SetList()<cr>
 
 
 " F8 set paste
@@ -296,5 +308,7 @@ imap <C-j> <c-x><c-o>
 "----------------------------------------
 " autoformat
 "----------------------------------------
-let g:formatdef_rustfmt = '"/home/baitu/mozilla/rust/crates/rustfmt/target/debug/rustfmt"'
+"let g:formatdef_rustfmt = '"/home/baitu/mozilla/rust/crates/rustfmt/target/debug/rustfmt"'
+"let g:formatdef_rustfmt = '"RUST_BACKTRACE=1; /home/baitu/workspace/rust/rfmt/target/release/rfmt 2> /tmp/rfmt"'
+let g:formatdef_rustfmt = '"rfmt 2> /tmp/rfmt"'
 let g:formatters_rust = ['rustfmt']
