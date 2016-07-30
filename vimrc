@@ -310,5 +310,5 @@ imap <C-j> <c-x><c-o>
 "----------------------------------------
 "let g:formatdef_rustfmt = '"/home/baitu/mozilla/rust/crates/rustfmt/target/debug/rustfmt"'
 "let g:formatdef_rustfmt = '"RUST_BACKTRACE=1; /home/baitu/workspace/rust/rfmt/target/release/rfmt 2> /tmp/rfmt"'
-let g:formatdef_rustfmt = '"rfmt 2> /tmp/rfmt"'
-let g:formatters_rust = ['rustfmt']
+let g:formatdef_rfmt = '"rfmt"'
+let g:formatters_rust = ['rfmt']
